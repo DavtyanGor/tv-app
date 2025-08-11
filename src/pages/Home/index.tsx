@@ -2,19 +2,7 @@ import { useEffect, useState } from "react";
 import TrendingNow from "./components/TrendingNow";
 import data from "../../../data.json";
 import HeroSection from "./components/HeroSection";
-
-type Movie = {
-  Id: string;
-  Title: string;
-  CoverImage: string;
-  ReleaseYear: string;
-  MpaRating: string;
-  Duration: string;
-  Description: string;
-  Category: string;
-  VideoUrl?: string;
-  TitleImage: string;
-};
+import type { Movie } from "./types";
 
 export default function Home() {
   const [sortedMovies, setSortedMovies] = useState<Movie[]>([]);

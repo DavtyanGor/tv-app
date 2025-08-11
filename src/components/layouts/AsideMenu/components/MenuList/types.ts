@@ -1,4 +1,4 @@
-export type MenuItem = {
+type MenuItem = {
   iconSrc: string;
   label: string;
 };

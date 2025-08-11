@@ -1,4 +1,4 @@
-export type ExtraMenuItem = {
+type ExtraMenuItem = {
   label: string;
 };
 

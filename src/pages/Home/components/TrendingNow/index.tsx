@@ -1,22 +1,9 @@
 import { Box, Image, Text, VStack } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import type { TendingNowProps } from "./types";
 
-type Movie = {
-  Id: string;
-  Title: string;
-  CoverImage: string;
-  ReleaseYear: string;
-  MpaRating: string;
-  Category: string;
-};
-
-type Props = {
-  movies: Movie[];
-  onSelect: (movie: Movie) => void;
-};
-
-export default function TrendingNow({ movies, onSelect }: Props) {
+export default function TrendingNow({ movies, onSelect }: TendingNowProps) {
   const moviesToShow = movies.slice(0, 50);
 
   return (

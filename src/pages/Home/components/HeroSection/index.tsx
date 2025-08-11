@@ -9,28 +9,13 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import type { HeroSectionProps } from "./types";
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 const MotionButton = motion(Button);
 
-type Movie = {
-  Title: string;
-  CoverImage: string;
-  ReleaseYear: string;
-  MpaRating: string;
-  Duration: string;
-  Description: string;
-  Category: string;
-  VideoUrl?: string;
-  TitleImage: string;
-};
-
-type Props = {
-  movie: Movie;
-};
-
-export default function HeroSection({ movie }: Props) {
+export default function HeroSection({ movie }: HeroSectionProps) {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
