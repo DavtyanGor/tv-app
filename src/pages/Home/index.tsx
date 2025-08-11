@@ -19,7 +19,7 @@ type Movie = {
   CoverImage: string;
   ReleaseYear: string;
   MpaRating: string;
-  Duration: string; // в секундах
+  Duration: string;
   Description: string;
   Category: string;
   VideoUrl?: string;
@@ -42,7 +42,6 @@ export default function HeroSection({ movie }: Props) {
     return () => clearTimeout(timer);
   }, [movie]);
 
-  // Форматируем длительность в часы и минуты
   const durationSec = parseInt(movie.Duration, 10);
   const minutes = Math.floor(durationSec / 60);
   const hours = Math.floor(minutes / 60);

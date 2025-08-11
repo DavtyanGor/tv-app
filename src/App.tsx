@@ -11,7 +11,7 @@ type Movie = {
   CoverImage: string;
   ReleaseYear: string;
   MpaRating: string;
-  Duration: string; // в секундах
+  Duration: string;
   Description: string;
   Category: string;
   VideoUrl?: string;
@@ -23,7 +23,6 @@ function App() {
   const [selectedMovie, setSelectedMovie] = useState<Movie>(data.Featured);
 
   useEffect(() => {
-    // 1. Читаем из sessionStorage
     const watchedIdsString = sessionStorage.getItem("watchedMovies");
     let watchedIds: string[] = watchedIdsString
       ? JSON.parse(watchedIdsString)
@@ -31,7 +30,6 @@ function App() {
 
     const trendingMovies: Movie[] = data.TendingNow.slice(0, 50);
 
-    // 2. Сортируем
     const sorted = [...trendingMovies].sort((a, b) => {
       const aIndex = watchedIds.indexOf(a.Id);
       const bIndex = watchedIds.indexOf(b.Id);
@@ -44,7 +42,6 @@ function App() {
 
     setSortedMovies(sorted);
 
-    // 3. Ставим последний просмотренный фильм в HeroSection
     if (watchedIds.length > 0) {
       const lastWatched = trendingMovies.find((m) => m.Id === watchedIds[0]);
       if (lastWatched) {
@@ -56,7 +53,6 @@ function App() {
   const handleSelectMovie = (movie: any) => {
     setSelectedMovie(movie);
 
-    // Обновляем только sessionStorage, без сортировки сейчас
     const watchedIdsString = sessionStorage.getItem("watchedMovies");
     let watchedIds: string[] = watchedIdsString
       ? JSON.parse(watchedIdsString)
