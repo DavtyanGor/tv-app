@@ -34,7 +34,7 @@ export default function HeroSection({ movie }: Props) {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    setShowVideo(false); // сбрасываем, если фильм поменялся
+    setShowVideo(false);
     const timer = setTimeout(() => {
       setShowVideo(true);
     }, 2000);
