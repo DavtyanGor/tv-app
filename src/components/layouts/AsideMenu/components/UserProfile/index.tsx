@@ -1,10 +1,7 @@
 import { Box, HStack, Text, Avatar } from "@chakra-ui/react";
+import type { UserProfileProps } from "./types";
 
-type Props = {
-  isOpen: boolean;
-};
-
-export default function UserProfile({ isOpen }: Props) {
+export default function UserProfile({ isOpen }: UserProfileProps) {
   return (
     <Box px={4} mb={20} mt={4}>
       <HStack gap={4}>

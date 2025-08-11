@@ -1,15 +1,7 @@
 import { VStack, HStack, Text } from "@chakra-ui/react";
+import type { ExtraMenuProps } from "./types";
 
-type ExtraMenuItem = {
-  label: string;
-};
-
-type Props = {
-  items: ExtraMenuItem[];
-  isOpen: boolean;
-};
-
-export default function ExtraMenuList({ items, isOpen }: Props) {
+export default function ExtraMenuList({ items, isOpen }: ExtraMenuProps) {
   return (
     <VStack px={10}>
       {items.map(({ label }) => (

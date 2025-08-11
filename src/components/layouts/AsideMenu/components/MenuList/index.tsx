@@ -1,23 +1,12 @@
 import { HStack, Image, Text } from "@chakra-ui/react";
-
-type MenuItem = {
-  iconSrc: string;
-  label: string;
-};
-
-type Props = {
-  items: MenuItem[];
-  isOpen: boolean;
-  activeTab: string;
-  onTabChange: (label: string) => void;
-};
+import type { MenuListProps } from "./types";
 
 export default function MenuList({
   items,
   isOpen,
   activeTab,
   onTabChange,
-}: Props) {
+}: MenuListProps) {
   return (
     <>
       {items.map(({ iconSrc, label }) => {
